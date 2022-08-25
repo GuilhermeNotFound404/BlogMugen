@@ -1,0 +1,42 @@
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+   <div class="row mb-4">
+{{#each postagens}}
+<div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary"></strong>
+          <h3 class="mb-0">{{titulo}}</h3>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto">{{descricao}}</p>
+          <a href="{{slug}}" class="stretched-link">Leia mais...</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/uploads/{{imagem}}" width="200" height="250" alt="">
+        </div>
+      </div>
+    </div>
+
+{{else}}
+
+
+{{/each}}
+
+    
+  </div>
+</div>
