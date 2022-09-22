@@ -62,23 +62,23 @@ router.post('/registro/nova', eAdmin, (req,res) =>{
     })
         
 
-    router.get('/login', (req,res) =>{
-        res.render('usuario/login')
-    })
+router.get('/login', (req,res) =>{
+    res.render('usuario/login')
+})
 
-    router.post('/login', (req,res, next) =>{
-        passport.authenticate("local", {
-            successRedirect: "/",
-            failureRedirect: "login",
-            failureFlash: true
-        })(req, res, next)
-    })
+router.post('/login', (req,res, next) =>{
+    passport.authenticate("local", {
+        successRedirect: "/",
+        failureRedirect: "login",
+        failureFlash: true
+    })(req, res, next)
+})
 
-    router.get("/logout", (req, res, next) => {
-        req.logout((err) => {
-            req.flash('success_msg', "Deslogado com sucesso!")
-            res.redirect("/")
-        })
+router.get("/logout", (req, res, next) => {
+    req.logout((err) => {
+        req.flash('success_msg', "Deslogado com sucesso!")
+        res.redirect("/")
     })
+})
 
 module.exports = router;

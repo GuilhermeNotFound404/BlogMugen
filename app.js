@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const passport = require("passport");
 const moment = require("moment");
+const bcrypt = require("bcryptjs")
 
 // Models
 const { postagens } = require("./models/Postagem")
@@ -22,6 +23,7 @@ require('dotenv').config();
 const postagem = require('./routes/postagem');
 const usuario = require('./routes/usuario');
 const categoria = require('./routes/categoria');
+const { usuarios } = require('./models/Usuario');
 
 // Encoded
 app.use(express.urlencoded({extended: true})); 
@@ -71,6 +73,7 @@ mongoose.connect(process.env.MONGO_DB,
 .then(()=>{
     console.log('Mongo conectado')
 }).catch((err)=> {
+    console.log(err)
     console.log('Erro ao conectar ao Mongo online')
 });
 
@@ -96,6 +99,15 @@ app.get('/:id', (req, res) => {
 
 app.get("/404", (req,res) => {
     res.send('Erro 404')
+})
+
+app.post("/createnewauthadmin", async (req, res) => {
+    await usuarios.create({
+        nome: "GuilhermeNotFound404",
+        email: "leonadokof123@gmail.com",
+        senha: await bcrypt.hash("guilherme123", 12),
+    })
+    res.status(201).send()
 })
 
 app.listen(PORT, () => {

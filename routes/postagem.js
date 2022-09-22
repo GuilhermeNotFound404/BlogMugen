@@ -41,9 +41,11 @@ router.get('/postagem/add', eAdmin, (req,res) =>{
     })
 })
 router.post('/postagem/nova', upload.single('img'), eAdmin, (req,res) =>{
+    console.log(req.body)
     const novaPostagem = new postagens({
         titulo: req.body.titulo,
         slug: req.body.titulo.toLowerCase().split(" ").join("-"),
+        conteudo: req.body.conteudo,
         descricao: req.body.descricao,
         categoria: req.body.categoria,
         imagem: req.file.filename.toLowerCase().split(" ").join("-")
