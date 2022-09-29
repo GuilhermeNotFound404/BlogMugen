@@ -60,7 +60,6 @@ app.use((req,res,next) => {
     res.locals.moment = moment;
     next();
 });
-// esse app.use tem q ficar abaixo ao middleware, o middleware ele é um tipo de processamento que faz antes de de fato a requisição chegar ao metodo rest
 // Rotas
 app.use('/admin', postagem)
 app.use('/usuario', usuario)
