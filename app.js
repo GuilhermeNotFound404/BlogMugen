@@ -51,11 +51,6 @@ app.use(express.static(path.join( __dirname, '/public' )));
 const imagemPath = path.join(__dirname, '/uploads');
 app.use("/uploads",express.static(imagemPath));
 
-// Rotas
-app.use('/admin', postagem)
-app.use('/admin', usuario)
-app.use('/admin', categoria)
-
 // Middleware
 app.use((req,res,next) => {
     res.locals.success_msg = req.flash('success_msg');
@@ -65,6 +60,11 @@ app.use((req,res,next) => {
     res.locals.moment = moment;
     next();
 });
+// esse app.use tem q ficar abaixo ao middleware, o middleware ele é um tipo de processamento que faz antes de de fato a requisição chegar ao metodo rest
+// Rotas
+app.use('/admin', postagem)
+app.use('/usuario', usuario)
+app.use('/admin', categoria)
 
 // Conecation MongoDB
 const Schema = mongoose.Schema;

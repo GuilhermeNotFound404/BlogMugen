@@ -17,7 +17,7 @@ router.get('/registro', eAdmin, (req,res) =>{
     })
 })
 
-router.get('/registro/add', eAdmin, (req,res) =>{
+router.get('/registro/add', (req,res) =>{
     res.render('usuario/addusuario')
 })
 
