@@ -578,10 +578,10 @@
   "resolved" "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.1.0.tgz"
   "version" "1.1.0"
 
-"node@^16.17.0":
-  "integrity" "sha512-cyEAIiYkXkEX4cDr6h35SkLVWavJt4EKzP4XFw1u8Uh6m1F+ZWtZ0puu6kmuBYJYU8L25AcXLhplSi3tbfX3Yw=="
-  "resolved" "https://registry.npmjs.org/node/-/node-16.17.0.tgz"
-  "version" "16.17.0"
+"node@^16.17.1":
+  "integrity" "sha512-121tyECMYiKlv+laPZBxvCsPbSyVu6FICbK4OQKQOWGFr0RwMe57AwC6NNl6EqsCI322GufohZDZ5fcFC1412g=="
+  "resolved" "https://registry.npmjs.org/node/-/node-16.17.1.tgz"
+  "version" "16.17.1"
   dependencies:
     "node-bin-setup" "^1.0.0"
 

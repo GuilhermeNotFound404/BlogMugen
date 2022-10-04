@@ -13,17 +13,19 @@
         <div class="mb-3">
           <label for="slug">Categoria</label>
           <select class="custom-select" name="categoria">
+          {{#if categorias}}
+          <option selected>Todas as Categorias</option>
           {{#each categorias}}
-                  <option selected>Todas as Categorias</option>
-                  <option value="{{_id}}">{{nome}}</option>
+            <option value="{{_id}}">{{nome}}</option>
+          {{/each}}
           {{else}}
           <option selected>Nenhuma categoria criada</option>
-          {{/each}}
+          {{/if}}
         </select>
         </div>
         <div class="mb-3">
           <label for="slug">Conteúdo</label>
-          <textarea class="form-control" name="conteudo" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" name="conteudo" id="exampleFormControlTextarea1" rows="3" ></textarea>
         </div>
          <div class="mb-3">
             <label for="slug">Imagem</label>

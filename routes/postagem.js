@@ -37,22 +37,22 @@ router.get('/postagens', eAdmin, (req,res) =>{
 })
 router.get('/postagem/add', eAdmin, (req,res) =>{
     categorias.find().lean().then((categorias) =>{
+        console.log(categorias)
         res.render('admin/addpostagem', {categorias: categorias})
     })
 })
 router.post('/postagem/nova', upload.single('img'), eAdmin, (req,res) =>{
-    console.log(req.body)
     const novaPostagem = new postagens({
         titulo: req.body.titulo,
         slug: req.body.titulo.toLowerCase().split(" ").join("-"),
         conteudo: req.body.conteudo,
         descricao: req.body.descricao,
-        categoria: req.body.categoria,
+        categoria: req.body.categoria,   
         imagem: req.file.filename.toLowerCase().split(" ").join("-")
     })
     novaPostagem.save();
     req.flash("success_msg", "Postagem realizada com sucesso")
-   res.redirect('/admin/postagens')
+    res.redirect('/admin/postagens')
 })
 
 router.get('/postagem/edit/:id', eAdmin, (req,res) =>{

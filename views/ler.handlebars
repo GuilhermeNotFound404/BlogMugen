@@ -1,34 +1,38 @@
-
-  <main class="container">
-    <div class="row g-5">
-      <div class="col-md-8">
-        <article class="blog-post">
-          <h2 class="blog-post-title mb-1">{{postagens.titulo}}</h2>
-          <p class="blog-post-meta"></p>
-          <p>{{postagens.descricao}}</p>
-          <hr>
-          <p>{{postagens.conteudo}}</p>
-          <img src="/uploads/{{postagens.imagem}}" width="100%" alt="">
-        </article>
-      </div>
-      <div class="col-md-4">
-        <div class="position-sticky" style="top: 2rem;">
-          <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="fst-italic">Sobre</h4>
-            <p class="mb-0">
-              TCC ETEC Elias nechar 
-            </p>
-          </div>
-          <div class="p-4">
-            <h4 class="fst-italic">Redes Sociais</h4>
-            <ol class="list-unstyled">
-              <li><a href="https://github.com/GuilhermeNotFound404" target="_blank">GitHub</a></li>
-                          <h4 class="fst-italic">Baixe o Game</h4>                
-               <ol class="list-unstyled">
-              <li><a href="https://github.com/GuilhermeNotFound404" target="_blank">Game</a></li>
-            </ol>
-          </div>
+<style>
+  .break-line {
+    white-space: pre-wrap;
+  }
+</style>
+<main class="container">
+  <div class="row g-5">
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">{{postagens.titulo}}</h2>
+        <p class="blog-post-meta"></p>
+        <p>{{postagens.descricao}}</p>
+        <hr>
+        <p class="break-line">{{postagens.conteudo}}</p>
+        <img src="/uploads/{{postagens.imagem}}" width="100%" alt="">
+      </article>
+    </div>
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">Sobre</h4>
+          <p class="mb-0">
+            TCC ETEC Elias nechar 
+          </p>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Redes Sociais</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/GuilhermeNotFound404" target="_blank">GitHub</a></li>
+                        <h4 class="fst-italic">Baixe o Game</h4>                
+              <ol class="list-unstyled">
+            <li><a href="https://github.com/GuilhermeNotFound404" target="_blank">Game</a></li>
+          </ol>
         </div>
       </div>
     </div>
-  </main>
+  </div>
+</main>
